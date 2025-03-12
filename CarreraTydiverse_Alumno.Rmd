@@ -307,12 +307,7 @@ top_counts_sorted <- cran %>% group_by(package) %>% summarise(count = n()) %>% f
 
 ```{r}
 
-
-
-
-
-
-
+top_unique_sorted <- cran %>% group_by(package) %>% summarise(unique = n_distinct(ip_id)) %>% filter(unique >= quantile(unique, probs = 0.99)) %>% arrange(desc(unique))
 
 ```
 25. Completa lo que se indica  usando `pipes`. Selecciona las columnas `ip_id, country, package, size` de `cran` y muestra el resultado por pantalla usando `print`. No es necesario almacenar.
