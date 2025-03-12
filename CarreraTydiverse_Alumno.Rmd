@@ -314,7 +314,7 @@ top_unique_sorted <- cran %>% group_by(package) %>% summarise(unique = n_distinc
 
 ```{r}
 
-
+print(cran %>% select(ip_id, country, package, size))
 
 ```
 
